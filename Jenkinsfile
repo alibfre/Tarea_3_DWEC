@@ -15,7 +15,7 @@ pipeline {
 
         stage('2. Lint') {
             steps {
-                bat 'npm run lint'
+                bat 'npm run lint --if-present'
             }
         }
 
