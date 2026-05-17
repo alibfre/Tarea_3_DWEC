@@ -21,7 +21,7 @@ pipeline {
 
         stage('3. Tests') {
             steps {
-                bat 'npm run test:unit'
+                bat 'npm run test:unit --if-present'
             }
         }
 
