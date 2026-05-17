@@ -9,32 +9,32 @@ pipeline {
 
         stage('1. Instalar dependencias') {
             steps {
-                sh 'npm install'
+                bat 'npm install'
             }
         }
 
         stage('2. Lint') {
             steps {
-                sh 'npm run lint'
+                bat 'npm run lint'
             }
         }
 
         stage('3. Tests') {
             steps {
-                sh 'npm run test:unit'
+                bat 'npm run test:unit'
             }
         }
 
         stage('4. Build') {
             steps {
-                sh 'npm run build'
+                bat 'npm run build'
             }
         }
 
         stage('5. Deploy Firebase') {
             steps {
-                sh 'npm install -g firebase-tools'
-                sh 'firebase deploy --only hosting --token $FIREBASE_TOKEN'
+                bat 'npm install -g firebase-tools'
+                bat 'firebase deploy --only hosting --token %FIREBASE_TOKEN%'
             }
         }
     }
